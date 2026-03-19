@@ -1,0 +1,217 @@
+---
+import "../styles/style.css";
+---
+
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard del Clima</title>
+</head>
+
+<body>
+
+<header>
+<h1>🌤 Dashboard del Clima</h1>
+<p>Seleccioná una ciudad</p>
+</header>
+
+<main>
+
+<section class="card">
+<h2>Clima actual</h2>
+
+<div class="weather">
+
+<p id="city">Buenos Aires</p>
+<p id="temp">25°C</p>
+<p id="estado">Soleado</p>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>Pronóstico semanal</h2>
+
+<ul id="forecast">
+<li>Lunes - 24°C</li>
+<li>Martes - 22°C</li>
+<li>Miércoles - 20°C</li>
+<li>Jueves - 23°C</li>
+<li>Viernes - 25°C</li>
+</ul>
+
+</section>
+
+<section class="card">
+
+<h2>Elegir ciudad</h2>
+
+<div class="cities">
+
+<button onclick="changeCity('baires')">Buenos Aires</button>
+<button onclick="changeCity('madrid')">Madrid</button>
+<button onclick="changeCity('paris')">París</button>
+<button onclick="changeCity('tokyo')">Tokio</button>
+<button onclick="changeCity('newyork')">New York</button>
+
+</div>
+
+</section>
+
+</main>
+
+<script>
+
+function changeCity(city){
+
+const cityText = document.getElementById("city")
+const temp = document.getElementById("temp")
+const estado = document.getElementById("estado")
+
+if(city === "baires"){
+cityText.textContent = "Buenos Aires"
+temp.textContent = "25°C"
+estado.textContent = "Soleado"
+}
+
+if(city === "madrid"){
+cityText.textContent = "Madrid"
+temp.textContent = "18°C"
+estado.textContent = "Nublado"
+}
+
+if(city === "paris"){
+cityText.textContent = "París"
+temp.textContent = "16°C"
+estado.textContent = "Lluvioso"
+}
+
+if(city === "tokyo"){
+cityText.textContent = "Tokio"
+temp.textContent = "27°C"
+estado.textContent = "Húmedo"
+}
+
+if(city === "newyork"){
+cityText.textContent = "New York"
+temp.textContent = "14°C"
+estado.textContent = "Ventoso"
+}
+
+}
+
+</script>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial, Helvetica, sans-serif;
+background:linear-gradient(120deg,#89f7fe,#66a6ff);
+min-height:100vh;
+}
+
+header{
+text-align:center;
+padding:40px;
+color:white;
+}
+
+header h1{
+font-size:2.4rem;
+margin-bottom:10px;
+}
+
+main{
+max-width:1100px;
+margin:auto;
+padding:20px;
+display:grid;
+gap:25px;
+grid-template-columns:1fr;
+}
+
+.card{
+background:white;
+border-radius:16px;
+padding:25px;
+box-shadow:0 10px 20px rgba(0,0,0,0.15);
+}
+
+.card h2{
+margin-bottom:15px;
+color:#333;
+}
+
+.weather{
+text-align:center;
+}
+
+#city{
+font-size:1.4rem;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+#temp{
+font-size:3rem;
+font-weight:bold;
+color:#4b6cff;
+}
+
+#estado{
+font-size:1.2rem;
+color:#777;
+margin-top:5px;
+}
+
+ul{
+list-style:none;
+}
+
+li{
+padding:8px;
+border-bottom:1px solid #eee;
+}
+
+li:last-child{
+border:none;
+}
+
+.cities{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+}
+
+button{
+border:none;
+padding:10px 15px;
+border-radius:8px;
+background:#4b6cff;
+color:white;
+cursor:pointer;
+font-weight:bold;
+}
+
+button:hover{
+background:#364fd9;
+}
+
+@media (min-width:768px){
+
+main{
+grid-template-columns:repeat(3,1fr);
+}
+
+}
+ </style>
+
+</body>
+</html>
